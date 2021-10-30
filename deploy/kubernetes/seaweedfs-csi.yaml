@@ -259,7 +259,7 @@ spec:
       containers:
         # provisioner
         - name: csi-provisioner
-          image: k8s.gcr.io/sig-storage/csi-provisioner:v2.0.4
+          image: registry.cn-shenzhen.aliyuncs.com/juxuny-google-containers/csi-provisioner:v2.0.4
           args:
             - "--csi-address=$(ADDRESS)"
             - "--v=5"
@@ -272,7 +272,7 @@ spec:
               mountPath: /var/lib/csi/sockets/pluginproxy/
         # attacher
         - name: csi-attacher
-          image: k8s.gcr.io/sig-storage/csi-attacher:v3.0.2
+          image: registry.cn-shenzhen.aliyuncs.com/juxuny-google-containers/csi-attacher:v3.0.2
           args:
             - "--v=5"
             - "--csi-address=$(ADDRESS)"
@@ -354,7 +354,7 @@ spec:
       dnsPolicy: ClusterFirstWithHostNet
       containers:
         - name: driver-registrar
-          image: k8s.gcr.io/sig-storage/csi-node-driver-registrar:v2.0.1
+          image: registry.cn-shenzhen.aliyuncs.com/juxuny-google-containers/csi-node-driver-registrar:v2.0.1
           args:
             - "--v=5"
             - "--csi-address=$(ADDRESS)"
